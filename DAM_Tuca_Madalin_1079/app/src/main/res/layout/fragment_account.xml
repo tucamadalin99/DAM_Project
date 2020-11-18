@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/nav_account"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".AccountFragment">
+
+    <!-- TODO: Update blank fragment layout -->
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="12dp"
+                android:layout_marginBottom="12dp"
+                android:fontFamily="@font/montserrat_bold"
+                android:text="@string/userDetailTxt" />
+
+            <EditText
+                android:id="@+id/etEdName"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_bg"
+                android:ems="10"
+                android:hint="Edit your name..."
+                android:inputType="textPersonName"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/etEdSurname"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_bg"
+                android:ems="10"
+                android:hint="Edit your surname..."
+                android:inputType="textPersonName"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/etEdEmail"
+                android:layout_width="250dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_bg"
+                android:ems="10"
+                android:hint="Edit your email..."
+                android:inputType="textPersonName"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <Button
+                android:id="@+id/btnChangePass"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:text="Change password"
+                android:background="#b33939"
+                android:textColor="#fff"/>
+
+            <Button
+                android:id="@+id/btnSubEdit"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat_bold"
+                android:layout_marginBottom="10dp"
+                android:layout_gravity="center"
+                android:text="Update!"
+                android:background="#b33939"
+                android:textColor="#fff"/>
+
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+
+</FrameLayout>

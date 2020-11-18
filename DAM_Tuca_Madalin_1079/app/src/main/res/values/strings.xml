@@ -1,3 +1,43 @@
 <resources>
-    <string name="app_name">DAM_Tuca_Madalin_1079</string>
+    <string name="app_name"></string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="licenseBtn">Add License</string>
+    <string name="vehicleBtn">Add Vehicle</string>
+    <string name="actsBtn">Add Acts</string>
+    <string name="consBtn">Consumables</string>
+    <string name="headerTitle">Drive Smart</string>
+    <string name="subHeader">Manage your vehicle</string>
+    <string name="loginHeader">Enter your user</string>
+    <string name="userHint">Username</string>
+    <string name="passHint">Password</string>
+    <string name="loginBtn">Login</string>
+    <string name="notRegTxt">Not registered yet?</string>
+    <string name="signUpTxt">Sign Up!</string>
+    <string name="registerHeader">Register your user</string>
+    <string name="birthTxt">Date of birth</string>
+    <string name="userDetailTxt">User Details</string>
+    <string name="licenseHeader">Add your driver\'s license</string>
+    <string name="type1">AM</string>
+    <string name="type2">A1</string>
+    <string name="type3">A2</string>
+    <string name="type4">A</string>
+    <string name="type5">B1</string>
+    <string name="type6">B</string>
+    <string name="type7">BE</string>
+    <string name="type8">C1</string>
+    <string name="type9">C</string>
+    <string name="type10">C1E</string>
+    <string name="type11">CE</string>
+    <string name="type12">D</string>
+    <string name="vehicleHeader">Add your vehicle</string>
+    <string name="vehicleBrandHeader">Brand</string>
+    <string-array name="brands">
+        <item>BMW</item>
+        <item>Mercedes</item>
+        <item>Seat</item>
+        <item>Dacia</item>
+    </string-array>
 </resources>

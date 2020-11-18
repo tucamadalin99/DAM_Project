@@ -64,7 +64,7 @@
                     android:layout_marginTop="12dp"
                     android:layout_marginBottom="12dp"
                     android:fontFamily="@font/montserrat_bold"
-                    android:text="Create new account" />
+                    android:text="@string/registerHeader" />
 
                 <EditText
                     android:id="@+id/etName"
@@ -102,13 +102,38 @@
                     android:gravity="center"
                     android:padding="8dp" />
 
+                <EditText
+                    android:id="@+id/etPassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_bg"
+                    android:ems="10"
+                    android:hint="Type your password..."
+                    android:inputType="textPassword"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
+                <EditText
+                    android:id="@+id/etRetypePassword"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:background="@drawable/edit_bg"
+                    android:ems="10"
+                    android:hint="Verify your password..."
+                    android:inputType="textPassword"
+                    android:gravity="center"
+                    android:padding="8dp" />
+
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
-                    android:text="Date of birth" />
+                    android:text="@string/birthTxt" />
 
                 <DatePicker
+                    android:id="@+id/dpBirth"
                     android:layout_width="match_parent"
                     android:layout_height="150dp"
                     android:calendarViewShown="false"
@@ -139,11 +164,13 @@
                     android:padding="8dp" />
 
                 <CheckBox
+                    android:id="@+id/cbConsent"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:text="I agree with the terms" />
                 <Button
+                    android:id="@+id/btnSubmit"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:fontFamily="@font/montserrat_bold"

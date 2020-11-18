@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/home_icon"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_user"
+            android:icon="@drawable/profile_icon"
+            android:title="My Account" />
+    </group>
+
+        <item android:title="Manage">
+            <menu>
+                <group android:checkableBehavior="single">
+                <item
+                    android:id="@+id/nav_driver"
+                    android:icon="@drawable/license_icon"
+                    android:title="Driver's license" />
+                <item
+                    android:id="@+id/nav_cars"
+                    android:icon="@drawable/car_icon"
+                    android:title="My Cars" />
+
+                <item
+                    android:id="@+id/nav_acts"
+                    android:icon="@drawable/acts_icon"
+                    android:title="Cars Acts" />
+                </group>
+            </menu>
+        </item>
+
+        <item android:title="Utilities">
+            <menu>
+                <item
+                    android:id="@+id/nav_dist"
+                    android:icon="@drawable/location_icon"
+                    android:title="Calculate distance" />
+
+                <item
+                    android:id="@+id/nav_gas"
+                    android:icon="@drawable/gas_icon"
+                    android:title="Fuel prices" />
+
+            </menu>
+        </item>
+
+
+
+</menu>

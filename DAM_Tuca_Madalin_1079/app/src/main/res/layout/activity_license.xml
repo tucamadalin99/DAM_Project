@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LicenseActivity">
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_bg"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        app:cardBackgroundColor="#b33939"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0">
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/logo" />
+    </androidx.cardview.widget.CardView>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="60dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/card_view_bg">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        app:cardCornerRadius="4dp"
+        app:cardElevation="8dp"
+        app:cardMaxElevation="8dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/licenseHeader"
+            android:layout_marginTop="20dp"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_gravity="center"/>
+
+            <TextView
+                android:id="@+id/startDateHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Issued date"
+                android:fontFamily="@font/montserrat"
+                android:layout_gravity="center"
+                android:layout_marginTop="20dp"/>
+
+            <DatePicker
+                android:id="@+id/dpStartDate"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
+
+            <TextView
+                android:id="@+id/endDateHeader"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="End date"
+                android:fontFamily="@font/montserrat"
+                android:layout_gravity="center"
+                />
+
+            <DatePicker
+                android:id="@+id/dpEndDate"
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:calendarViewShown="false"
+                android:datePickerMode="spinner" />
+
+            <EditText
+                android:id="@+id/etPoliceDep"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_bg"
+                android:ems="10"
+                android:hint="Local Police Station..."
+                android:inputType="text"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/etCNP"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_bg"
+                android:ems="10"
+                android:hint="Your personal ID..."
+                android:inputType="text"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <EditText
+                android:id="@+id/etLicenseNumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:background="@drawable/edit_bg"
+                android:ems="10"
+                android:hint="Your license number..."
+                android:inputType="text"
+                android:gravity="center"
+                android:padding="8dp" />
+
+            <TextView
+                android:id="@+id/tvLicenseType"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Certified vehicle types"
+                android:fontFamily="@font/montserrat"
+                android:layout_gravity="center"
+                />
+
+
+            <LinearLayout
+                android:id="@+id/checkboxAContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+                   <CheckBox
+                       android:id="@+id/A_license"
+                       android:layout_width="wrap_content"
+                       android:layout_height="wrap_content"
+                       android:text="@string/type4"/>
+
+                <CheckBox
+                    android:id="@+id/B_license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/type6"/>
+
+                <CheckBox
+                    android:id="@+id/C_license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/type9"/>
+
+                <CheckBox
+                    android:id="@+id/D_license"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="10dp"
+                    android:text="@string/type12"/>
+
+            </LinearLayout>
+
+                                <Button
+                                    android:id="@+id/btnAddLicense"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="wrap_content"
+                                    android:fontFamily="@font/montserrat_bold"
+                                    android:layout_marginBottom="10dp"
+                                    android:text="Add driver's license!"
+                                    android:background="#b33939"
+                                    android:textColor="#fff"/>
+
+                            </LinearLayout>
+
+
+                        </androidx.cardview.widget.CardView>
+                        </ScrollView>
+
+
+                    </androidx.constraintlayout.widget.ConstraintLayout>

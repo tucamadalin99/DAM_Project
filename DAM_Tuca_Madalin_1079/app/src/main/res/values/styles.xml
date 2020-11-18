@@ -1,10 +1,27 @@
 <resources>
     <!-- Base application theme. -->
-    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+    <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:statusBarColor">#b33939</item>
+    </style>
+
+    <style name="errToast">
+        <item name="stColorBackground">#DD4141</item>
+        <item name="stIconStart">@drawable/error_icon</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stStrokeWidth">2dp</item>
+        <item name="stStrokeColor">#FC504E4E</item>
+    </style>
+
+    <style name="successToast">
+        <item name="stColorBackground">#4CAF50</item>
+        <item name="stIconStart">@drawable/done_icon</item>
+        <item name="stTextColor">#fff</item>
+        <item name="stStrokeWidth">2dp</item>
+        <item name="stStrokeColor">#FC504E4E</item>
     </style>
 
 </resources>
