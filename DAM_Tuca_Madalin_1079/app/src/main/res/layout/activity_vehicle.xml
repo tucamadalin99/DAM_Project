@@ -57,6 +57,7 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/montserrat_bold"
             android:text="@string/vehicleHeader"
             android:layout_gravity="center"
@@ -66,6 +67,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/montserrat"
+            android:layout_marginTop="10dp"
             android:text="@string/vehicleBrandHeader"
             android:layout_gravity="center"
             />
@@ -73,13 +75,136 @@
         <Spinner
             android:id="@+id/spinnerBrand"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:gravity="center"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/vehicleModelHeader"
+            android:layout_gravity="center"
+            />
 
         <Spinner
             android:id="@+id/spinnerModel"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:text="@string/vehicleFuelHeader"
+            android:layout_gravity="center"
+            />
+
+        <RadioGroup
+            android:id="@+id/fuelTypeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/radioPetrol"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/typePetrol"/>
+            <RadioButton
+                android:id="@+id/radioDiesel"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="20dp"
+                android:text="@string/typeDiesel"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginTop="10dp"
+            android:text="@string/vehicleYearHeader"
+            android:layout_gravity="center"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerYear"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginTop="10dp"
+            android:text="@string/vehicleBodyHeader"
+            android:layout_gravity="center"
+            />
+
+        <RadioGroup
+            android:id="@+id/bodyNormalTypeGroup"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:orientation="vertical"
+           >
+            <RadioButton
+                android:id="@+id/rbSedan"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/sedanType"/>
+            <RadioButton
+                android:id="@+id/rbHatch"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/hatchbakType"/>
+            <RadioButton
+                android:id="@+id/rbBreak"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/breakType"/>
+            <RadioButton
+                android:id="@+id/rbSuv"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="@string/suvType"/>
+        </RadioGroup>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat"
+            android:layout_marginTop="10dp"
+            android:text="@string/vehicleCapHeader"
+            android:layout_gravity="center"
+            />
+
+        <Spinner
+            android:id="@+id/spinnerCapacity"
+            android:layout_width="match_parent"
+            android:textAlignment="center"
+            android:layout_height="wrap_content"
+            android:spinnerMode="dropdown"/>
+
+        <Button
+            android:id="@+id/btnAddCar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/montserrat_bold"
+            android:layout_marginBottom="5dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/addVehicle"
+            android:background="#b33939"
+            android:textColor="#fff"/>
 
     </LinearLayout>
     </androidx.cardview.widget.CardView>

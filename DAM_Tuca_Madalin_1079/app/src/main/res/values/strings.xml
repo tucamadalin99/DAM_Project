@@ -34,10 +34,29 @@
     <string name="type12">D</string>
     <string name="vehicleHeader">Add your vehicle</string>
     <string name="vehicleBrandHeader">Brand</string>
-    <string-array name="brands">
-        <item>BMW</item>
-        <item>Mercedes</item>
-        <item>Seat</item>
-        <item>Dacia</item>
-    </string-array>
+    <string name="vehicleModelHeader">Model</string>
+    <string name="vehicleFuelHeader">Fuel type</string>
+    <string name="typeDiesel">Diesel</string>
+    <string name="typePetrol">Petrol</string>
+    <string name="vehicleYearHeader">Release Year</string>
+    <string name="vehicleBodyHeader">Vehicle Body</string>
+    <string name="sedanType">Sedan</string>
+    <string name="hatchbakType">Hatchback</string>
+    <string name="breakType">Break</string>
+    <string name="suvType">SUV</string>
+    <string name="addVehicle">Add Vehicle!</string>
+    <string name="vehicleCapHeader">Cilindric Capacity</string>
+    <string name="currency">RON</string>
+    <string name="appTitle">Overdrive</string>
+    <string name="fuelComputerHeader">Fuel Calculator</string>
+    <string name="distanceHeader">Distance(KM)</string>
+    <string name="consumptionHeader">Consumption(l/100 km)</string>
+    <string name="gasPriceHeader">Fuel price(RON 1/l)</string>
+    <string name="actsHeader">Add your car\'s acts</string>
+    <string name="optionRCA">Add RCA Assurance</string>
+    <string name="optionCasco">Add Casco Assurance</string>
+    <string name="optionITP">Add Technial Inspection</string>
+    <string name="rememberUser">Remember me</string>
+    <string name="indPass">Type in your new password:</string>
+
 </resources>

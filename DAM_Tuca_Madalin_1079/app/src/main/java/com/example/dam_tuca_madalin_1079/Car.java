@@ -1,44 +1,38 @@
 package com.example.dam_tuca_madalin_1079;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.ForeignKey;
+import androidx.room.PrimaryKey;
+import androidx.room.Relation;
+
 import java.util.Date;
 import java.util.List;
-
+@Entity(tableName = "cars")
 public class Car {
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+    public int uId;
+    @ColumnInfo(name = "brand_col")
     private String brand;
+    @ColumnInfo(name = "model_col")
     private String model;
-    private int doors;
     private String carBodyType;
-    private String color;
-    private Date producedDate;
+    private int producedYear;
     private String fuelType;
     private int cilindricCapacity;
-    private int hp;
-    private List<Act> acts;
-    private List<Consumable> consumables;
 
-    public Car() {
-        this.brand = "";
-        this.model = "";
-        this.doors = 0;
-        this.carBodyType = "";
-        this.color = "";
-        this.producedDate = null;
-        this.fuelType = "";
-        this.cilindricCapacity = 0;
-        this.hp = 0;
-    }
 
-    public Car(String brand, String model, int doors, String carBodyType, String color, Date producedDate, String fuelType, int cilindricCapacity, int hp) {
+    public Car(int uId, String brand, String model, String carBodyType, int producedYear, String fuelType, int cilindricCapacity) {
         this.brand = brand;
+        this.uId = uId;
         this.model = model;
-        this.doors = doors;
         this.carBodyType = carBodyType;
-        this.color = color;
-        this.producedDate = producedDate;
+        this.producedYear = producedYear;
         this.fuelType = fuelType;
         this.cilindricCapacity = cilindricCapacity;
-        this.hp = hp;
     }
+
 
     public String getBrand() {
         return brand;
@@ -56,36 +50,12 @@ public class Car {
         this.model = model;
     }
 
-    public int getDoors() {
-        return doors;
-    }
-
-    public void setDoors(int doors) {
-        this.doors = doors;
-    }
-
     public String getCarBodyType() {
         return carBodyType;
     }
 
     public void setCarBodyType(String carBodyType) {
         this.carBodyType = carBodyType;
-    }
-
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
-    public Date getProducedDate() {
-        return producedDate;
-    }
-
-    public void setProducedDate(Date producedDate) {
-        this.producedDate = producedDate;
     }
 
     public String getFuelType() {
@@ -104,27 +74,25 @@ public class Car {
         this.cilindricCapacity = cilindricCapacity;
     }
 
-    public int getHp() {
-        return hp;
+    public int getProducedYear() {
+        return producedYear;
     }
 
-    public void setHp(int hp) {
-        this.hp = hp;
+    public void setProducedYear(int producedYear) {
+        this.producedYear = producedYear;
     }
 
-    public List<Act> getActs() {
-        return acts;
-    }
-
-    public void setActs(List<Act> acts) {
-        this.acts = acts;
-    }
-
-    public List<Consumable> getConsumables() {
-        return consumables;
-    }
-
-    public void setConsumables(List<Consumable> consumables) {
-        this.consumables = consumables;
+    @Override
+    public String toString() {
+        return "Car{" +
+                "id=" + id +
+                ", uId=" + uId +
+                ", brand='" + brand + '\'' +
+                ", model='" + model + '\'' +
+                ", carBodyType='" + carBodyType + '\'' +
+                ", producedYear=" + producedYear +
+                ", fuelType='" + fuelType + '\'' +
+                ", cilindricCapacity=" + cilindricCapacity +
+                '}';
     }
 }

@@ -1,22 +1,32 @@
 package com.example.dam_tuca_madalin_1079;
 
+import androidx.room.ColumnInfo;
+import androidx.room.Entity;
+import androidx.room.PrimaryKey;
+
 import java.util.Date;
 import java.util.List;
-
+@Entity(tableName = "users")
 public class User {
+    @PrimaryKey(autoGenerate = true)
+    public int id;
+    @ColumnInfo(name = "name_col")
     private String name;
+    @ColumnInfo(name = "surname_col")
     private String surname;
+    @ColumnInfo(name = "email_col")
     private String email;
-    private Date birthDate;
+    @ColumnInfo(name = "pass_col")
+    private String password;
+    private String birthDate;
     private String county;
     private String city;
-    private DriverLicense driverLicense;
-    private List<Car> cars;
 
-    public User(String name, String surname, String email, String password, Date birthDate, String county, String city) {
+    public User(String name, String surname, String email, String password, String birthDate, String county, String city) {
         this.name = name;
         this.surname = surname;
         this.email = email;
+        this.password = password;
         this.birthDate = birthDate;
         this.county = county;
         this.city = city;
@@ -42,15 +52,23 @@ public class User {
         return email;
     }
 
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
     public void setEmail(String email) {
         this.email = email;
     }
 
-    public Date getBirthDate() {
+    public String getBirthDate() {
         return birthDate;
     }
 
-    public void setBirthDate(Date birthDate) {
+    public void setBirthDate(String birthDate) {
         this.birthDate = birthDate;
     }
 
@@ -70,21 +88,6 @@ public class User {
         this.city = city;
     }
 
-    public DriverLicense getDriverLicense() {
-        return driverLicense;
-    }
-
-    public void setDriverLicense(DriverLicense driverLicense) {
-        this.driverLicense = driverLicense;
-    }
-
-    public List<Car> getCars() {
-        return cars;
-    }
-
-    public void setCars(List<Car> cars) {
-        this.cars = cars;
-    }
 
     @Override
     public String toString() {
@@ -95,8 +98,7 @@ public class User {
                 ", birthDate=" + birthDate +
                 ", county='" + county + '\'' +
                 ", city='" + city + '\'' +
-                ", driverLicense=" + driverLicense +
-                ", cars=" + cars +
+                 +
                 '}';
     }
 }

@@ -1,7 +1,9 @@
 package com.example.dam_tuca_madalin_1079;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.room.Room;
 
+import android.accounts.Account;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -10,12 +12,15 @@ import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.Switch;
 import android.widget.Toast;
 
 import com.muddzdev.styleabletoast.StyleableToast;
 
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 public class Register extends AppCompatActivity {
 
@@ -29,22 +34,15 @@ public class Register extends AppCompatActivity {
     private EditText etCity;
     private CheckBox cbConsent;
     private Button submit;
-
-    public static Date getDateFromDatePicker(DatePicker datePicker){
-        int day = datePicker.getDayOfMonth();
-        int month = datePicker.getMonth();
-        int year = datePicker.getYear();
-        Calendar calendar = Calendar.getInstance();
-        calendar.set(year, month, day);
-
-        return calendar.getTime();
-    }
+    private AppDb db;
+    Globals globals;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        db = Room.databaseBuilder(this, AppDb.class, "users").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         initViews();
         setupListeners();
     }
@@ -67,16 +65,22 @@ public class Register extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(validateContent()){
+                    globals = new Globals(getApplicationContext());
                     String name = etName.getText().toString();
                     String surname = etSurname.getText().toString();
                     String email = etEmail.getText().toString();
                     String password = etPassword.getText().toString();
-                    Date birth = getDateFromDatePicker(dpBirth);
+                    Date birth = globals.getDateFromDatePicker(dpBirth);
+                    String birthDate = globals.formatDate(birth);
                     String county = etCounty.getText().toString();
                     String city = etCity.getText().toString();
-                    User newUser = new User(name,surname,email,password,birth,county,city);
+                    User newUser = new User(name,surname,email,password,birthDate,county,city);
+                    db.userDAO().insertUser(newUser);
+                    Toast.makeText(getApplicationContext(), "You have succesfully registered!", Toast.LENGTH_LONG).show();
                     Intent intent = new Intent(getApplicationContext(), Login.class);
                     intent.putExtra("emailKey", email);
+                    intent.putExtra("nameKey", name);
+                    intent.putExtra("surnameKey", surname);
                     intent.putExtra("passKey", password);
                     startActivity(intent);
                 };

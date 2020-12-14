@@ -9,33 +9,49 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.room.Room;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
+import android.widget.ScrollView;
 
 import com.google.android.material.navigation.NavigationView;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout drawerLayout;
     NavigationView navigationView;
     Toolbar toolbar;
+    String nameExtra;
+    String surnameExtra;
+    String emailExtra;
+    AppDb db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         changeFragment(new HomeFragment());
+        Bundle extras = getIntent().getExtras();
+        nameExtra = extras.getString("nameKey");
+        surnameExtra = extras.getString("surnameKey");
+        emailExtra = extras.getString("emailKey");
+
+        //Delete this after testing
+        db = Room.databaseBuilder(this, AppDb.class, "users").fallbackToDestructiveMigration().allowMainThreadQueries().build();
+//        List<UserWithCars> cars = db.userDAO().getUsersWithCars();
+//        for(UserWithCars user: cars){
+//            Log.d("Car###", user.cars.toString());
+//        };
+//        Log.d("CARS COUNT", "size: " + cars.size());
 
         //HOOKS
         drawerLayout = findViewById(R.id.drawer_layout);
         navigationView = findViewById(R.id.nav_view);
         toolbar = findViewById(R.id.toolbar);
-
-        //TOOLBAR
-//       setSupportActionBar(toolbar);
-//       getSupportActionBar().setHomeAsUpIndicator(R.drawable.ic_baseline_menu_24);
-       // toolbar.setNavigationIcon(R.drawable.ic_baseline_menu_24);
 
        //Nav drawer
         navigationView.bringToFront();
@@ -63,7 +79,37 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 changeFragment(new HomeFragment());
                 break;
             case R.id.nav_user:
-                changeFragment(new AccountFragment());
+                AccountFragment fragmentAcc = new AccountFragment();
+                Bundle bundle = new Bundle();
+                bundle.putString("name", nameExtra);
+                bundle.putString("surname", surnameExtra);
+                bundle.putString("email", emailExtra);
+                fragmentAcc.setArguments(bundle);
+                changeFragment(fragmentAcc);
+                break;
+
+            case R.id.nav_driver:
+                changeFragment(new LicenseFragment());
+                break;
+
+            case R.id.nav_acts:
+//                Globals globals = new Globals(getApplicationContext());
+//                UserWithCars u = db.userDAO().getUserCars(globals.returnUserSession());
+//                Log.d("TAG SHIT", u.acts.toString());
+                changeFragment(new FragmentActs());
+                break;
+
+            case R.id.nav_gas:
+                changeFragment(new GasFragment());
+                break;
+
+            case R.id.nav_dist:
+                changeFragment(new DistanceComputerFragment());
+                break;
+
+            case R.id.nav_cars:
+                Log.d("NAV CARS", "TEST");
+                changeFragment(new MyCarsFragment());
                 break;
 
         }
