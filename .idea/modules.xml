@@ -2,7 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/DAM_Project.iml" filepath="$PROJECT_DIR$/.idea/DAM_Project.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/DAM_Tuca_Madalin_1079.iml" filepath="$PROJECT_DIR$/.idea/modules/DAM_Tuca_Madalin_1079.iml" group="DAM_Tuca_Madalin_1079" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/app.iml" group="DAM_Tuca_Madalin_1079/app" />
     </modules>
   </component>
 </project>
