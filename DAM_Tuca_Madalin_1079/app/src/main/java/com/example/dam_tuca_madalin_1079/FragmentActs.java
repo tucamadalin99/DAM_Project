@@ -71,7 +71,7 @@ public class FragmentActs extends Fragment {
         lvActs = view.findViewById(R.id.list_view_acts);
         db = Room.databaseBuilder(getContext(), AppDb.class, "users").fallbackToDestructiveMigration().allowMainThreadQueries().build();
         globals = new Globals(getContext());
-        List<Act> userActs = db.userDAO().getUserActs(globals.returnUserSession());
+        List<Act> userActs = db.actDAO().getUserActs(globals.returnUserSession());
         if(userActs.size() > 0){
             ActsAdapter adapter = new ActsAdapter(getContext(), R.layout.adapter_acts_layout, (ArrayList)userActs);
             lvActs.setAdapter(adapter);

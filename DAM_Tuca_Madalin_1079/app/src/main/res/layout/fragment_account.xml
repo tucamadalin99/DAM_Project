@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".AccountFragment">
+    tools:context=".fragments.AccountFragment">
 
     <!-- TODO: Update blank fragment layout -->
 
@@ -45,7 +45,7 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_bg"
                 android:ems="10"
-                android:hint="Edit your name..."
+                android:hint="@string/etName"
                 android:inputType="textPersonName"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -58,7 +58,7 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_bg"
                 android:ems="10"
-                android:hint="Edit your surname..."
+                android:hint="@string/edit_your_surname"
                 android:inputType="textPersonName"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -71,32 +71,33 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_bg"
                 android:ems="10"
-                android:hint="Edit your email..."
+                android:hint="@string/edit_your_email"
                 android:inputType="textPersonName"
                 android:layout_gravity="center"
                 android:gravity="center"
-                android:padding="8dp" />
+                android:padding="8dp"
+                tools:ignore="TextFields" />
 
             <Button
                 android:id="@+id/btnChangePass"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold"
+                android:fontFamily="@font/montserrat"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
-                android:text="Change password"
-                android:background="#b33939"
+                android:text="@string/change_password"
+                style="@style/customButton"
                 android:textColor="#fff"/>
 
             <Button
                 android:id="@+id/btnSubEdit"
                 android:layout_width="120dp"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/montserrat_bold"
+                android:fontFamily="@font/montserrat"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
-                android:text="Update!"
-                android:background="#b33939"
+                android:text="@string/update"
+                style="@style/customButton"
                 android:textColor="#fff"/>
 
 

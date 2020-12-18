@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LicenseActivity">
+    tools:context=".activties.LicenseActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_bg"
@@ -58,6 +58,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/licenseHeader"
+            style="@style/customHeader"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/montserrat_bold"
             android:layout_gravity="center"/>
@@ -181,8 +182,8 @@
                                     android:layout_height="wrap_content"
                                     android:fontFamily="@font/montserrat_bold"
                                     android:layout_marginBottom="10dp"
-                                    android:text="Add driver's license!"
-                                    android:background="#b33939"
+                                    android:text="@string/add"
+                                    style="@style/customButton"
                                     android:textColor="#fff"/>
 
                             </LinearLayout>

@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "141737364712",
+    "firebase_url": "https://dam-project-3fc04-default-rtdb.firebaseio.com",
+    "project_id": "dam-project-3fc04",
+    "storage_bucket": "dam-project-3fc04.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:141737364712:android:9601920456dac3fb798d5d",
+        "android_client_info": {
+          "package_name": "com.example.dam_tuca_madalin_1079"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "141737364712-d22nhclsq19nl17sukkn7q7vvvfv63qr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCfwAGVhOC4xbgLTSOGUbHvIgz5K7dhdoQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "141737364712-d22nhclsq19nl17sukkn7q7vvvfv63qr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

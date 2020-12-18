@@ -8,6 +8,8 @@ import android.widget.DatePicker;
 import android.widget.ListAdapter;
 import android.widget.ListView;
 
+import com.example.dam_tuca_madalin_1079.activties.Login;
+
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;

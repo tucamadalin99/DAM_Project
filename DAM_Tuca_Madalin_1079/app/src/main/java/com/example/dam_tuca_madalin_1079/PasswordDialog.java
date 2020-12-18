@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -40,7 +41,10 @@ public class PasswordDialog extends AppCompatDialogFragment {
             @Override
             public void onClick(View v) {
                 globals = new Globals(getContext());
-                db.userDAO().updatePassword(etNewPass.getText().toString(), globals.returnUserSession());
+                AsyncTask.execute(()->{
+                    db.userDAO().updatePassword(etNewPass.getText().toString(), globals.returnUserSession());
+                });
+
                 StyleableToast.makeText(getContext(), "Succesfully updated password!", Toast.LENGTH_LONG, R.style.successToast).show();
             }
         });

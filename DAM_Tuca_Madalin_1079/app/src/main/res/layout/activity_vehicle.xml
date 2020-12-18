@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VehicleActivity">
+    tools:context=".activties.VehicleActivity">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view_bg"
@@ -55,6 +55,7 @@
         android:orientation="vertical">
 
         <TextView
+            style="@style/customHeader"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
@@ -119,7 +120,7 @@
                 android:id="@+id/radioDiesel"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="20dp"
+                android:layout_marginStart="20dp"
                 android:text="@string/typeDiesel"/>
         </RadioGroup>
 
@@ -203,7 +204,7 @@
             android:layout_marginBottom="5dp"
             android:layout_marginTop="10dp"
             android:text="@string/addVehicle"
-            android:background="#b33939"
+            style="@style/customButton"
             android:textColor="#fff"/>
 
     </LinearLayout>

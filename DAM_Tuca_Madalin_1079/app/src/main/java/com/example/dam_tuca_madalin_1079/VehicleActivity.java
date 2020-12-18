@@ -208,7 +208,7 @@ public class VehicleActivity extends AppCompatActivity {
                     int capacity = Integer.parseInt(spinnerCapacities.getSelectedItem().toString());
 
                     Car car = new Car(sessionId,brand,model,body, year,fuelType,capacity);
-                    db.userDAO().insertCar(car);
+                    db.carDAO().insertCar(car);
                     Log.d("CAR", car.toString());
                     StyleableToast.makeText(getApplicationContext(), brand + " " + model + " added!", Toast.LENGTH_LONG, R.style.successToast).show();
                 }

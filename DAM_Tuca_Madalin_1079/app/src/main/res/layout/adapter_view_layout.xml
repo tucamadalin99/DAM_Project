@@ -11,7 +11,8 @@
         android:layout_width="match_parent"
         android:layout_height="120dp"
         android:id="@+id/imgGasBrand"
-        android:layout_weight="66.6"/>
+        android:layout_weight="66.6"
+        android:contentDescription="@string/todo" />
 
     <LinearLayout
         android:orientation="vertical"
@@ -21,10 +22,10 @@
 
         <TextView
             android:gravity="center"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:textColor="#005F6A"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Petrol"
+            android:text="@string/petrolDummy"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             />
@@ -33,7 +34,7 @@
             android:gravity="center"
             android:fontFamily="@font/montserrat"
             android:textColor="#005F6A"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:id="@+id/tvGasPrice"/>
@@ -41,24 +42,21 @@
 
         <TextView
             android:gravity="center"
-            android:text="Diesel"
+            android:text="@string/dieselDummmy"
             android:textColor="#000"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:fontFamily="@font/montserrat_bold"
             android:layout_width="match_parent"
-            android:layout_height="30dp"
-            android:layout_below="@+id/tvGasPrice"
-            />
+            android:layout_height="30dp" />
 
         <TextView
             android:gravity="center"
-            android:textSize="16dp"
+            android:textSize="16sp"
             android:fontFamily="@font/montserrat"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:textColor="#000"
             android:id="@+id/tvDieselPrice"
-            android:layout_below="@+id/tvGasPrice"
             />
 
     </LinearLayout>

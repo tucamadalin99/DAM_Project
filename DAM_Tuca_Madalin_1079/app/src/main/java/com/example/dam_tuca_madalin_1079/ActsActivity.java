@@ -71,11 +71,11 @@ public class ActsActivity extends AppCompatActivity {
                 String type = spActType.getSelectedItem().toString();
                 String startDate = formatDate(getDateFromDatePicker(dpStartDate));
                 String endDate = formatDate(getDateFromDatePicker(dpEndDate));
-                int carId = db.userDAO().getCarId(brand, model, globals.returnUserSession());
+                int carId = db.carDAO().getCarId(brand, model, globals.returnUserSession());
                 Log.d("Car id", carId + "");
                 Act act = new Act(globals.returnUserSession(),carId, type, brand, model, startDate, endDate);
                 Log.d("Act", act.toString());
-                db.userDAO().insertAct(act);
+                db.actDAO().insertAct(act);
                 StyleableToast.makeText(getApplicationContext(), type + " act added!", Toast.LENGTH_LONG, R.style.successToast).show();
             }
 
@@ -100,7 +100,7 @@ public class ActsActivity extends AppCompatActivity {
             StyleableToast.makeText(this, "Brand or Model field is empty", Toast.LENGTH_LONG, R.style.errToast).show();
         }
         int carId = -1;
-        carId = db.userDAO().getCarId(etBrand.getText().toString(), etModel.getText().toString(), globals.returnUserSession());
+        carId = db.carDAO().getCarId(etBrand.getText().toString(), etModel.getText().toString(), globals.returnUserSession());
         Log.d("Car ID TEST", carId+"");
         if(carId == 0){
             StyleableToast.makeText(this, "Cannot find the specified car in your account", Toast.LENGTH_LONG, R.style.errToast).show();

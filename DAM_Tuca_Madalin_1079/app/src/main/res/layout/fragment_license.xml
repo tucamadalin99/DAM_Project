@@ -4,14 +4,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LicenseFragment">
+    tools:context=".fragments.LicenseFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="60dp"
-        android:layout_marginTop="30dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -45,40 +45,40 @@
                 android:id="@+id/tvNameSurname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:fontFamily="@font/montserrat"
                 android:layout_gravity="center"
                 android:layout_marginTop="150sp"
-                android:text="Name Surname"/>
+                android:text="@string/name_surname"/>
 
             <TextView
                 android:id="@+id/tvBorn"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Birth"
+                android:text="@string/birth"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:drawableLeft="@drawable/born"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/born" />
 
             <TextView
                 android:id="@+id/tvCity"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="City"
+                android:text="@string/city"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:drawableLeft="@drawable/city"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/city" />
 
             <TextView
                 android:id="@+id/tvCounty"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="County"
+                android:text="@string/countyPh"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -86,21 +86,21 @@
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Issued"
-                android:drawableLeft="@drawable/date"
+                android:text="@string/issued"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/date" />
 
             <TextView
                 android:id="@+id/tvEndDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="3dp"
-                android:text="Issued"
-                android:drawableLeft="@drawable/date"
+                android:text="@string/expires"
+                android:drawableStart="@drawable/date"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
+                android:textSize="15sp"
                 android:layout_gravity="center"/>
 
             <TextView
@@ -108,44 +108,44 @@
                 android:layout_marginTop="13dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Police Station"
-                android:drawableLeft="@drawable/police"
+                android:text="@string/police_station"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/police" />
 
             <TextView
                 android:id="@+id/tvLicenseId"
                 android:layout_marginTop="10dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="License Id"
-                android:drawableLeft="@drawable/licenseid"
+                android:text="@string/license_id"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/licenseid" />
 
             <TextView
                 android:id="@+id/tvPersonId"
                 android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Personal Id"
-                android:drawableLeft="@drawable/licenseid"
+                android:text="@string/personal_id"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/licenseid" />
 
             <TextView
                 android:id="@+id/tvLicenseSort"
                 android:layout_marginTop="3dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="License Types"
-                android:drawableLeft="@drawable/car_icon"
+                android:text="@string/license_types"
                 android:fontFamily="@font/montserrat"
-                android:textSize="15dp"
-                android:layout_gravity="center"/>
+                android:textSize="15sp"
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/car_icon" />
 
 
         </LinearLayout>

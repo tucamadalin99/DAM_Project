@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DistanceComputerFragment">
+    tools:context=".fragments.DistanceComputerFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <androidx.cardview.widget.CardView
@@ -51,7 +51,7 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_bg"
                 android:ems="10"
-                android:hint="Input km..."
+                android:hint="@string/input_km"
                 android:inputType="text"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -73,7 +73,7 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_bg"
                 android:ems="10"
-                android:hint="Input consumption..."
+                android:hint="@string/input_consumption"
                 android:inputType="text"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -95,7 +95,7 @@
                 android:layout_margin="8dp"
                 android:background="@drawable/edit_bg"
                 android:ems="10"
-                android:hint="Input price..."
+                android:hint="@string/input_price"
                 android:inputType="text"
                 android:layout_gravity="center"
                 android:gravity="center"
@@ -108,8 +108,8 @@
                 android:fontFamily="@font/montserrat"
                 android:layout_marginBottom="10dp"
                 android:layout_gravity="center"
-                android:text="Compute"
-                android:background="#b33939"
+                android:text="@string/compute"
+                style="@style/customButton"
                 android:textColor="#fff"/>
 
             <TextView
@@ -117,11 +117,11 @@
                 android:layout_width="wrap_content"
                 android:gravity="center"
                 android:fontFamily="@font/montserrat_bold"
-                android:drawableLeft="@drawable/gas_icon"
-                android:textSize="18dp"
+                android:textSize="18sp"
                 android:textColor="#000"
                 android:layout_height="wrap_content"
-                android:layout_gravity="center"/>
+                android:layout_gravity="center"
+                app:drawableLeftCompat="@drawable/gas_icon" />
 
         </LinearLayout>
 

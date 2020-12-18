@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/chartLayout"
+    android:orientation="vertical"
+    tools:context=".activties.ChartActivity">
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/OilColor"
+        android:textColor="#000"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/CoolantColor"
+        android:textColor="#AA0F0F"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/FreonColor"
+        android:textColor="#0F31AA"
+        android:layout_gravity="center"
+        />
+
+    <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:fontFamily="@font/montserrat"
+    android:text="@string/FluidColor"
+    android:textColor="#FF9800"
+    android:layout_gravity="center"
+    />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/montserrat"
+        android:text="@string/PadsColor"
+        android:textColor="#4CAF50"
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/delChartBtn"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:text="@string/btnDelCharTxt"
+        style="@style/customButton"
+        android:layout_gravity="center"/>
+
+
+</LinearLayout>

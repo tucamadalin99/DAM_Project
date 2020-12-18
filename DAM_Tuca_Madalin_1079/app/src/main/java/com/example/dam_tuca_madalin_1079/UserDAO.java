@@ -7,18 +7,16 @@ import androidx.room.OnConflictStrategy;
 import androidx.room.Query;
 import androidx.room.Transaction;
 
+import com.example.dam_tuca_madalin_1079.classes.DriverLicense;
+import com.example.dam_tuca_madalin_1079.classes.User;
+import com.example.dam_tuca_madalin_1079.classes.UserWithCars;
+
 import java.util.List;
 
 @Dao
 public interface UserDAO {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insertUser(User user);
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertCar(Car car);
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    public void insertAct(Act act);
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     public void insertLicense(DriverLicense license);
@@ -31,9 +29,6 @@ public interface UserDAO {
 
     @Query("SELECT * FROM users WHERE id = :currentUid")
     User getUserById(int currentUid);
-
-    @Query("SELECT id FROM cars WHERE brand_col LIKE :brand AND model_col LIKE :model AND uId=:uId")
-    int getCarId(String brand, String model, int uId);
 
     @Query("UPDATE users SET pass_col = :newPass WHERE id = :currentUid")
     void updatePassword(String newPass, int currentUid);
@@ -54,10 +49,6 @@ public interface UserDAO {
     @Transaction
     @Query("SELECT * FROM users WHERE id = :currentUid")
     public UserWithCars getUserCars(int currentUid);
-
-    @Transaction
-    @Query("SELECT * FROM acts WHERE uId = :currentUid")
-    public List<Act> getUserActs(int currentUid);
 
 
 

@@ -8,9 +8,9 @@
     <TextView
         android:gravity="center"
         android:textAlignment="center"
-        android:text="Type"
+        android:text="@string/type"
         android:fontFamily="@font/montserrat_bold"
-        android:textSize="17dp"
+        android:textSize="17sp"
         android:textColor="#000"
         android:layout_width="match_parent"
         android:layout_height="60dp"
@@ -25,10 +25,10 @@
 
         <TextView
             android:gravity="center"
-            android:textSize="17dp"
+            android:textSize="17sp"
             android:textColor="#000"
             android:fontFamily="@font/montserrat_bold"
-            android:text="Car"
+            android:text="@string/carDummy"
             android:id="@+id/tvCar"
             android:layout_width="match_parent"
             android:layout_height="30dp"
@@ -38,8 +38,8 @@
             android:gravity="center"
             android:fontFamily="@font/montserrat"
             android:textColor="#005F6A"
-            android:text="Date"
-            android:textSize="16dp"
+            android:text="@string/DateDummy"
+            android:textSize="16sp"
             android:layout_width="match_parent"
             android:layout_height="30dp"
             android:id="@+id/tvDate"/>
