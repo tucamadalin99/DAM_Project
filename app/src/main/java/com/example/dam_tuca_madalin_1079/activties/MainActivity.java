@@ -11,6 +11,7 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -41,10 +42,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         changeFragment(new HomeFragment());
-        Bundle extras = getIntent().getExtras();
-        nameExtra = extras.getString("nameKey");
-        surnameExtra = extras.getString("surnameKey");
-        emailExtra = extras.getString("emailKey");
+//        Bundle extras = getIntent().getExtras();
+//        nameExtra = extras.getString("nameKey");
+//        surnameExtra = extras.getString("surnameKey");
+//        emailExtra = extras.getString("emailKey");
 
         //Delete this after testing
         db = Room.databaseBuilder(this, AppDb.class, "users").fallbackToDestructiveMigration().allowMainThreadQueries().build();
@@ -72,7 +73,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
         }else{
-            super.onBackPressed();
+           // super.onBackPressed();
+            changeFragment(new HomeFragment());
         }
     }
 
@@ -118,6 +120,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 changeFragment(new MyCarsFragment());
                 break;
 
+            case R.id.nav_logout:
+                changeActivity(Login.class);
+                break;
+
         }
         return true;
     }
@@ -126,5 +132,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.content_fragment, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void changeActivity(Class activity){
+        Intent intent = new Intent(this, activity);
+        startActivity(intent);
     }
 }
