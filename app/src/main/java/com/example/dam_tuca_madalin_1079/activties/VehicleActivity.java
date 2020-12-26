@@ -3,6 +3,7 @@ package com.example.dam_tuca_madalin_1079.activties;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -73,6 +74,7 @@ public class VehicleActivity extends AppCompatActivity {
         db = Room.databaseBuilder(this, AppDb.class, "users").allowMainThreadQueries().build();
         models.add(0, "None");
         brands.add(0, "None");
+
 
         (new Thread(new Runnable() {
             @Override
@@ -237,6 +239,12 @@ public class VehicleActivity extends AppCompatActivity {
         rbDiesel = findViewById(R.id.radioDiesel);
         spCapacity = findViewById(R.id.spinnerYear);
         submitBtn = findViewById(R.id.btnAddCar);
+    }
+
+    @Override
+    public void onBackPressed() {
+        super.onBackPressed();
+        startActivity(new Intent(this, MainActivity.class));
     }
 
     public boolean validateContent(){

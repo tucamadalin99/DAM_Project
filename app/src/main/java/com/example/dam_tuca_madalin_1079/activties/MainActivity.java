@@ -11,10 +11,12 @@ import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 
+import com.example.dam_tuca_madalin_1079.classes.User;
 import com.example.dam_tuca_madalin_1079.fragments.AccountFragment;
 import com.example.dam_tuca_madalin_1079.AppDb;
 import com.example.dam_tuca_madalin_1079.fragments.DistanceComputerFragment;
@@ -34,17 +36,34 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
     String nameExtra;
     String surnameExtra;
     String emailExtra;
+    HomeFragment homeFrag;
+    User loggedUser;
+    Bundle bundl;
     AppDb db;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        changeFragment(new HomeFragment());
-        Bundle extras = getIntent().getExtras();
-        nameExtra = extras.getString("nameKey");
-        surnameExtra = extras.getString("surnameKey");
-        emailExtra = extras.getString("emailKey");
+        Intent intent = getIntent();
+        loggedUser = intent.getParcelableExtra("userData");
+        homeFrag = new HomeFragment();
+        bundl = new Bundle();
+        if(loggedUser != null){
+            bundl.putString("nameKey", loggedUser.getName());
+            bundl.putString("surnameKey", loggedUser.getSurname());
+            homeFrag.setArguments(bundl);
+        }else{
+            bundl.getString("nameKey");
+            bundl.getString("surnameKey");
+            homeFrag.setArguments(bundl);
+        }
+
+        changeFragment(homeFrag);
+//        Bundle extras = getIntent().getExtras();
+//        nameExtra = extras.getString("nameKey");
+//        surnameExtra = extras.getString("surnameKey");
+//        emailExtra = extras.getString("emailKey");
 
         //Delete this after testing
         db = Room.databaseBuilder(this, AppDb.class, "users").fallbackToDestructiveMigration().allowMainThreadQueries().build();
@@ -72,7 +91,8 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         if(drawerLayout.isDrawerOpen(GravityCompat.START)){
             drawerLayout.closeDrawer(GravityCompat.START);
         }else{
-            super.onBackPressed();
+           // super.onBackPressed();
+            changeFragment(homeFrag);
         }
     }
 
@@ -82,7 +102,7 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentManager fragmentManager = getSupportFragmentManager();
         switch (item.getItemId()){
             case R.id.nav_home:
-                changeFragment(new HomeFragment());
+                changeFragment(homeFrag);
                 break;
             case R.id.nav_user:
                 AccountFragment fragmentAcc = new AccountFragment();
@@ -118,6 +138,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
                 changeFragment(new MyCarsFragment());
                 break;
 
+            case R.id.nav_logout:
+                changeActivity(Login.class);
+                break;
+
         }
         return true;
     }
@@ -126,5 +150,10 @@ public class MainActivity extends AppCompatActivity implements NavigationView.On
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.content_fragment, fragment);
         fragmentTransaction.commit();
+    }
+
+    public void changeActivity(Class activity){
+        Intent intent = new Intent(this, activity);
+        startActivity(intent);
     }
 }

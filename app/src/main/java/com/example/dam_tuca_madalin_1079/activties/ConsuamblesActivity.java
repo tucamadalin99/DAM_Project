@@ -56,11 +56,13 @@ public class ConsuamblesActivity extends AppCompatActivity {
         btnAdd.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                consumable = new Consumable(globals.returnUserSession(),spTypes.getSelectedItem().toString(),Float.parseFloat(etPrice.getText().toString()));
-                //TODO: Solve to add to the sum of one type;
-                dbRef.child("user"+globals.returnUserSession()).push().setValue(consumable);
-              //  dbRef.setValue(consumable);
-                StyleableToast.makeText(getApplicationContext(),spTypes.getSelectedItem().toString() + " Added!", Toast.LENGTH_LONG, R.style.successToast).show();
+                if(etPrice.getText().toString() != null && etPrice.getText().toString().matches("[0-9]+")){
+                    consumable = new Consumable(globals.returnUserSession(),spTypes.getSelectedItem().toString(),Float.parseFloat(etPrice.getText().toString()));
+                    dbRef.child("user"+globals.returnUserSession()).push().setValue(consumable);
+                    StyleableToast.makeText(getApplicationContext(),spTypes.getSelectedItem().toString() + " Added!", Toast.LENGTH_LONG, R.style.successToast).show();
+                }else{
+                    StyleableToast.makeText(getApplicationContext(), "Invalid price format!", Toast.LENGTH_LONG, R.style.errToast).show();
+                }
             }
         });
 

@@ -3,6 +3,7 @@ package com.example.dam_tuca_madalin_1079.activties;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -33,6 +34,10 @@ public class LicenseActivity extends AppCompatActivity {
     private CheckBox[] licenseTypes;
     private Button btnSubmitLicense;
 
+    @Override
+    public void onBackPressed() {
+        startActivity(new Intent(this, MainActivity.class));
+    }
 
 
     @Override

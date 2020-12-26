@@ -1,13 +1,17 @@
 package com.example.dam_tuca_madalin_1079.classes;
 
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.PrimaryKey;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 @Entity(tableName = "users")
-public class User {
+public class User implements Parcelable {
     @PrimaryKey(autoGenerate = true)
     public int id;
     @ColumnInfo(name = "name_col")
@@ -31,6 +35,29 @@ public class User {
         this.county = county;
         this.city = city;
     }
+
+    protected User(Parcel in) {
+        id = in.readInt();
+        name = in.readString();
+        surname = in.readString();
+        email = in.readString();
+        password = in.readString();
+        birthDate = in.readString();
+        county = in.readString();
+        city = in.readString();
+    }
+
+    public static final Creator<User> CREATOR = new Creator<User>() {
+        @Override
+        public User createFromParcel(Parcel in) {
+            return new User(in);
+        }
+
+        @Override
+        public User[] newArray(int size) {
+            return new User[size];
+        }
+    };
 
     public String getName() {
         return name;
@@ -100,5 +127,17 @@ public class User {
                 ", city='" + city + '\'' +
                  +
                 '}';
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(name);
+        dest.writeString(surname);
     }
 }

@@ -19,6 +19,9 @@ public interface CarDAO {
     @Query("DELETE FROM cars WHERE id = :id")
     public void deleteCar(int id);
 
+    @Query("SELECT COUNT(*) FROM cars WHERE uId = :uId")
+    public int getCarCount(int uId);
+
     @Query("DELETE FROM cars")
     public void deleteAllCars();
 }

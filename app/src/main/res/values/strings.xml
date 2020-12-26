@@ -11,7 +11,7 @@
     <string name="headerTitle">Drive Smart</string>
     <string name="subHeader">Manage your vehicle</string>
     <string name="loginHeader">Enter your user</string>
-    <string name="userHint">Username</string>
+    <string name="userHint">Email</string>
     <string name="passHint">Password</string>
     <string name="loginBtn">Login</string>
     <string name="notRegTxt">Not registered yet?</string>

@@ -6,6 +6,7 @@ import androidx.room.Room;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.os.Parcelable;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -38,6 +39,11 @@ public class Login extends AppCompatActivity {
 
 
     @Override
+    public void onBackPressed() {
+        this.finishAffinity();
+    }
+
+    @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
@@ -47,7 +53,7 @@ public class Login extends AppCompatActivity {
         String name = "";
         String surname = "";
         String email = "";
-        String password;
+        String password = "";
         etUserName = findViewById(R.id.etUser);
         etPassword = findViewById(R.id.etPass);
         swRemember = findViewById(R.id.swRemember);
@@ -76,9 +82,7 @@ public class Login extends AppCompatActivity {
                     Log.v("Session", "ID: " + loginUser.id);
                     Log.v("SESSION RETRIEVE: ", "ID: " + sharedPreferences.getInt(CURRENT_USER_SESSION,0));
                     Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
-                    mainActivity.putExtra("nameKey", finalName);
-                    mainActivity.putExtra("surnameKey", finalSurname);
-                    mainActivity.putExtra("emailKey", finalEmail);
+                    mainActivity.putExtra("userData", loginUser);
                     startActivity(mainActivity);
                 }else{
                     StyleableToast.makeText(getApplicationContext(), "Invalid user or password!", Toast.LENGTH_LONG, R.style.errToast).show();
@@ -99,6 +103,7 @@ public class Login extends AppCompatActivity {
 
 
         loadData();
+        //if(email == null)
         updateViews();
     }
 

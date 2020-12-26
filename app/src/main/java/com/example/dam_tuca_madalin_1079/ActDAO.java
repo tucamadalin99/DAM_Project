@@ -20,6 +20,9 @@ public interface ActDAO {
     @Query("SELECT * FROM acts WHERE uId = :currentUid")
     public List<Act> getUserActs(int currentUid);
 
+    @Query("SELECT COUNT(*) FROM acts WHERE uId = :uId")
+    int getActsCount(int uId);
+
     @Transaction
     @Delete
     public void deleteAct(Act act);

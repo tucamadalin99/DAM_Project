@@ -3,6 +3,7 @@ package com.example.dam_tuca_madalin_1079.activties;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.room.Room;
 
+import android.content.Intent;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.util.Log;
@@ -38,6 +39,8 @@ public class ActsActivity extends AppCompatActivity {
     private DatePicker dpEndDate;
     private Button btnSubAct;
     private ArrayAdapter<String> actTypesAdapter;
+    String nameExtra;
+    String surnameExtra;
 
 
     @Override
@@ -56,6 +59,9 @@ public class ActsActivity extends AppCompatActivity {
         db = Room.databaseBuilder(this, AppDb.class, "users").allowMainThreadQueries().build();
         globals = new Globals(this);
         int session = globals.returnUserSession();
+        Bundle extras = getIntent().getExtras();
+        nameExtra = extras.getString("nameKey");
+       surnameExtra = extras.getString("surnameKey");
 
         btnSubAct.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -108,7 +114,13 @@ public class ActsActivity extends AppCompatActivity {
         return valid;
     }
 
-
+    @Override
+    public void onBackPressed() {
+        Intent mainActivity = new Intent(getApplicationContext(), MainActivity.class);
+        mainActivity.putExtra("nameKey", nameExtra);
+        mainActivity.putExtra("surnameKey", surnameExtra);
+        startActivity(mainActivity);
+    }
 
     private String formatDate(Date date){
         SimpleDateFormat dateFormat = new SimpleDateFormat("dd/MM/yyyy", Locale.getDefault());
